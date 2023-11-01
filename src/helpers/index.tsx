@@ -1,9 +1,11 @@
-export const formatDate = (objDate) => {
+import { Timestamp } from "firebase/firestore";
+
+export const formatDate = (objDate: Timestamp) => {
   const date = new Date(objDate?.seconds * 1000);
 
   const time = `${date.getHours()}:${date.getMinutes()}`;
 
-  const options = {
+  const options: Intl.DateTimeFormatOptions = {
     month: "long",
     day: "numeric",
   };
